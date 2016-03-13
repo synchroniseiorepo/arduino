@@ -10,21 +10,20 @@
 
     class SynchroniseOutputs{
         public:
-            SynchroniseOutputs();
-            void setOutputs(const char* name, char value);
-            void setOutputs(const char* name, char* value);
-            void setOutputs(const char* name, const char* value);
-            void setOutputs(const char* name, int value);
-            void setOutputs(const char* name, long value);
-            void setOutputs(const char* name, short value);
-            void setOutputs(const char* name, float value);
-            void setOutputs(const char* name, double value);
-            void setOutputs(const char* name, bool value);
+            SynchroniseOutputs(const char *json, uint8_t sizeBuffer);
+            void set(const char * key, int value);
 
-            void toString();
+            bool getBool(const char * key);
+            char getChar(const char * key);
+            long getLong(const char * key);
+            int getInt(const char * key);
+            short getShort(const char * key);
+            float getFloat(const char * key);
+            double getDouble(const char * key);
+            const char* getConstChar(const char * key);
 
-            StaticJsonBuffer<200> jsonBuffer;
-            JsonObject& _root = jsonBuffer.createObject();
+        private:
+            JsonObject* _root;
     };
 
 #endif
