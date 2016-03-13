@@ -7,14 +7,22 @@
 
     #include "Arduino.h"
     #include "SynchroniseInputs.h"
+    #include "SynchroniseOutputs.h"
+    #include <Process.h>
+
+    typedef void (*SuccessCallback)(SynchroniseOutputs *outputs);
+    typedef void (*ErrorCallback)(SynchroniseOutputs *outputs);
 
     class Synchronise{
         public:
-            Synchronise(char* public_key);
-            void componentRun(char* component_id, SynchroniseInput* inputs, void* success_callback, void* error_callback);
-            void workflowRun(char* component_id, SynchroniseInputs* inputs, void* success_callback, void* error_callback);
+            Synchronise(const char* public_key);
+            SynchroniseOutputs componentRun(const char* component_id, SynchroniseInputs* inputs);
+            SynchroniseOutputs componentRun(const char* component_id);
+
         private:
-            char* _public_key;
+            SynchroniseOutputs sendRequest(const char*id_element, const char* type_request, SynchroniseInputs* inputs, SuccessCallback *success, ErrorCallback *error);
+
+            const char* _public_key;
     };
 
 #endif

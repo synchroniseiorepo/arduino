@@ -6,27 +6,25 @@
 #define Synchronise_inputs_h
 
     #include "Arduino.h"
+    #include <ArduinoJson.h>
 
     class SynchroniseInputs{
         public:
             SynchroniseInputs();
-            void setInput(char* name, char value);
-            void setInput(char* name, char* value);
-            void setInput(char* name, unsigned char* value);
-            void setInput(char* name, int value);
-            void setInput(char* name, unsigned int value);
-            void setInput(char* name, word value);
-            void setInput(char* name, long value);
-            void setInput(char* name, unsigned long value);
-            void setInput(char* name, short value);
-            void setInput(char* name, float value);
-            void setInput(char* name, double value);
-            void setInput(char* name, bool value);
+            void setInput(const char* name, char value);
+            void setInput(const char* name, char* value);
+            void setInput(const char* name, const char* value);
+            void setInput(const char* name, int value);
+            void setInput(const char* name, long value);
+            void setInput(const char* name, short value);
+            void setInput(const char* name, float value);
+            void setInput(const char* name, double value);
+            void setInput(const char* name, bool value);
 
-            void removeInput(char* name);
+            void toString();
 
-        private:
-            char* _public_key;
+            StaticJsonBuffer<200> jsonBuffer;
+            JsonObject& _root = jsonBuffer.createObject();
     };
 
 #endif
