@@ -53,16 +53,16 @@ SynchroniseOutputs Synchronise::sendRequest(const char*id_element, const char* t
     Serial.println(buffer);
     if(request_succeeded){
         SynchroniseOutputs results = SynchroniseOutputs(buffer, BUFFER_SIZE);
-        results.set("status", true);
+        results.setBool("status", true);
         return results;
     }else{
         if(buffer_too_small){
             SynchroniseOutputs results = SynchroniseOutputs("{\"err\":\"Buffer is too small. \"}", BUFFER_SIZE);
-            results.set("status", false);
+            results.setBool("status", false);
             return results;
         }else{
             SynchroniseOutputs results = SynchroniseOutputs(buffer, BUFFER_SIZE);
-            results.set("status", false);
+            results.setBool("status", false);
             return results;
         }
     }

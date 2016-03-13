@@ -11,7 +11,7 @@
     class SynchroniseOutputs{
         public:
             SynchroniseOutputs(const char *json, uint8_t sizeBuffer);
-            void set(const char * key, int value);
+            void setBool(const char * key, bool value);
 
             bool getBool(const char * key);
             char getChar(const char * key);

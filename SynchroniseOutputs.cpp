@@ -5,7 +5,7 @@ SynchroniseOutputs::SynchroniseOutputs(const char *json, uint8_t sizeBuffer){
     _root = &jsonBuffer.parseObject(&*json, sizeBuffer);
 }
 
-void SynchroniseOutputs::set(const char * key, int value){
+void SynchroniseOutputs::set(const char * key, bool value){
     _root->set(key, value);
 }
 
