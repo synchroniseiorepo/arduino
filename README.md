@@ -1,6 +1,6 @@
 [Synchronise](https://www.synchronise.io)
 --------------
-Disclaimer: This a work in progress. The library will be complete in a few days, please be patient.
+Disclaimer: This is a work in progress. The library will be complete in a few days, please be patient.
 
 The Arduino Yùn client allows you to communicate with Synchronise in a very simple and elegant way.
 The library communicates with our servers using the bridge library introduced specifically for the Arduino Yùn. The architecture of the cakks is different and does not rely on a callback mechanism like in our javascript library. Instead it let's you call components and workflows one after the other.
