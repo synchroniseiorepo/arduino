@@ -79,8 +79,8 @@ void loop(){
 
 ```
 Synchronise(const char* public_key);
-            SynchroniseOutputs componentRun(const char* component_id, SynchroniseInputs* inputs);
-            SynchroniseOutputs componentRun(const char* component_id);
+SynchroniseOutputs componentRun(const char* component_id, SynchroniseInputs* inputs);
+SynchroniseOutputs componentRun(const char* component_id);
 ```
 
 * SynchroniseInputs.cpp
