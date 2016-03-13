@@ -1,6 +1,5 @@
 /* Synchronise.cpp - Client library to communicate with the REST API of synchronise.io
    Created by Thibaut Rey, March 6, 2016.*/
-#include <Bridge.h>
 #include "Synchronise.h"
 #define BUFFER_SIZE 500
 

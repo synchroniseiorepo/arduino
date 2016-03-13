@@ -6,9 +6,11 @@
 #define Synchronise_h
 
     #include "Arduino.h"
+    #include "ArduinoJson.h"
     #include "SynchroniseInputs.h"
     #include "SynchroniseOutputs.h"
     #include <Process.h>
+    #include <Bridge.h>
 
     typedef void (*SuccessCallback)(SynchroniseOutputs *outputs);
     typedef void (*ErrorCallback)(SynchroniseOutputs *outputs);
