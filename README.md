@@ -69,7 +69,7 @@ void loop(){
    // Bellow are some examples
    // my_data is the key of the data you want to read
    Serial.println(outputs.getBool("my_data"));
-   // another os the key of the data you want to read
+   // another is the key of the data you want to read
    Serial.println(outputs.getConstChar("another"));
 }
 ```
